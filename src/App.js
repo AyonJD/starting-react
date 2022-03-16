@@ -5,21 +5,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CreateDiv></CreateDiv>
       </header>
     </div>
   );
 }
-
 export default App;
+
+const CreateDiv = () => {
+  return (
+    <div>
+      <h1>It's a header</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, in sit! Aliquid exercitationem amet consequuntur voluptates blanditiis natus iure quia, dolore aut nihil eaque? Inventore in magnam tenetur id nisi veritatis iste rem eveniet cum? Distinctio excepturi fugiat cupiditate atque, ea unde sint ex odit nostrum sequi! Ducimus, animi pariatur.</p>
+    </div>
+  )
+}
