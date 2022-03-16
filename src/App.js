@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const myArr = [
+    { name: 'laptop', price: 153000 },
+    { name: 'phone', price: 93000 },
+    { name: 'watch', price: 33000 },
+    { name: 'tablet', price: 5000 }
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -9,7 +15,15 @@ function App() {
 
         {/* <Dynamic header = "It's the header passed by attribute" paragraph = "It's a paragraph passed by attribute"></Dynamic> */}
 
-        <CreateComp name={myObj.name} age={myObj.age} job={ myObj.job }></CreateComp>
+        {/* <CreateComp name={myObj.name} age={myObj.age} job={ myObj.job }></CreateComp> */}
+
+        {
+          myArr.map(product => {
+            return (
+              <ArrOfObject name={product.name} price={ product.price }></ArrOfObject>
+            )
+        },{})
+        }
       </header>
     </div>
   );
@@ -44,7 +58,7 @@ export default App;
 
 //Pass dynamic data to components with object
 
-const myObj = {
+/* const myObj = {
   name: 'Ayon',
   age: 24,
   job: 'Programming'
@@ -55,6 +69,18 @@ const CreateComp = props => {
       <h1>Name: { props.name }</h1>
       <h3>Age: { props.age }</h3>
       <h3>Profession: { props.job }</h3>
+    </div>
+  )
+} */
+
+
+//Pass dynamic data to components with array of object
+
+const ArrOfObject = props => {
+  return (
+    <div style={{border: '2px solid white', padding: '10px 30px', margin: '20px'}}>
+      <h3>Product Name: { props.name }</h3>
+      <p>Product Price: { props.price }</p>
     </div>
   )
 }
