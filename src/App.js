@@ -1,13 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const myArr = [
+  /* const myArr = [
     { name: 'laptop', price: 153000 },
     { name: 'phone', price: 93000 },
     { name: 'watch', price: 33000 },
     { name: 'tablet', price: 5000 }
-  ];
+  ]; */
   return (
     <div className="App">
       <header className="App-header">
@@ -17,13 +17,15 @@ function App() {
 
         {/* <CreateComp name={myObj.name} age={myObj.age} job={ myObj.job }></CreateComp> */}
 
-        {
+        {/* {
           myArr.map(product => {
             return (
               <ArrOfObject name={product.name} price={ product.price }></ArrOfObject>
             )
-        },{})
-        }
+        })
+        } */}
+
+        <Counter></Counter>
       </header>
     </div>
   );
@@ -76,11 +78,27 @@ const CreateComp = props => {
 
 //Pass dynamic data to components with array of object
 
-const ArrOfObject = props => {
+/* const ArrOfObject = props => {
   return (
     <div style={{border: '2px solid white', padding: '10px 30px', margin: '20px'}}>
       <h3>Product Name: { props.name }</h3>
       <p>Product Price: { props.price }</p>
+    </div>
+  )
+} */
+
+
+//Count with useState()
+
+const Counter = () => {
+  let [count, setCount] = useState(0)
+  const increase = () => setCount(++count);
+  const decrease = () => setCount(--count);
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increase} style={ {padding: '8px 15px', margin: '5px'} }>Increase</button>
+      <button onClick={decrease} style={ {padding: '8px 15px', margin: '5px'} }>Decrease</button>
     </div>
   )
 }
